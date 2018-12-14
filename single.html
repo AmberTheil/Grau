@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="DA">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Single</title>
+</head>
+
+<body>
+    <header class="header">
+
+
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+
+                    <a href="index.html">
+                <img src="img/logo.png" alt=”Logo”>
+                                  </a>
+
+                    <a href="kollektioner.html">
+                        <li>Kollektion</li>
+                    </a>
+                    <a href="galleri.html">
+                        <li>Galleri</li>
+                    </a>
+                    <a href="#">
+                        <li>Om Grau</li>
+                    </a>
+                    <a href="kontakt.html">
+                        <li>Kontakt</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt=”Logo”>
+                                  </a>
+        </div>
+
+        <nav>
+            <div class="desktop">
+                <ul>
+                    <a href="kollektioner.html">
+                        Kollektion
+                    </a>
+                    <a href="galleri.html">
+                        Galleri
+                    </a>
+                    <a href="om.html">
+                        Om Grau
+                    </a>
+                    <a href="kontakt.html">
+                        Kontakt
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+
+
+    <section id="single">
+
+        <button onclick="goBack()">Tilbage</button>
+
+        <main>
+            <section class="data-container">
+
+                <div id="content">
+                    <img class="data-billede" src="" alt="">
+                    <div class="mainside">
+                        <h2 class="data-title"></h2>
+                        <h4 class="data-langbeskrivelse"></h4>
+                        <h4 class="data-pris"></h4>
+                    </div>
+                    <div class="aside">
+
+                        <div class="containerkontakt">
+                            <form action="/action_page.php">
+                                <label for="fname">Navn</label>
+                                <input type="text" id="fname" name="firstname" placeholder="Dit navn">
+
+                                <label for="lname">E-mail</label>
+                                <input type="text" id="lname" name="lastname" placeholder="Din e-mail...">
+                                <label for="lname">Telefon nr.</label>
+                                <input type="text" id="lname" name="lastname" placeholder="Dit telefon nr...">
+                                <label for="style">Style</label>
+                                <select id="style" name="style">
+          <option value="bolero">Bolero</option>
+          <option value="cardigan">Cardigan</option>
+          <option value="halstørklæde">Halstørklæde</option>
+                                    <option value="Sjal">Sjal</option>
+                                    <option value="Poncho">Poncho</option>
+                                    <option value="Plaid">Plaid</option>
+        </select>
+                                <label for="farver">Farver</label>
+                                <select id="farver" name="farver">
+          <option value="lyst">Lyst</option>
+          <option value="mørkt">Mørkt</option>
+          <option value="farverigt">Farverigt</option>
+                                    <option value="rødligt">Rødligt</option>
+                                    <option value="blåligt">Blåligt</option>
+        </select>
+
+                                <label for="subject">Kommentare</label>
+                                <textarea id="subject" name="subject" placeholder="Skriv din kommentar her..." style="height:200px"></textarea>
+
+                                <input type="submit" value="Send">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </section>
+
+
+
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get("id");
+
+        let posts;
+        document.addEventListener("DOMContentLoaded", getJSON);
+        async function getJSON() {
+            let jsonData = await fetch("http://www.rigmordesign.com/kea/grau/wordpress/wp-json/wp/v2/styles?per_page=100");
+            posts = await jsonData.json();
+            console.log(posts);
+            visPosts();
+
+
+        }
+
+        function visPosts() {
+            let dest = document.querySelector(".data-container");
+            console.log("id");
+            posts.forEach(post => {
+                if (post.id == id) {
+                    dest.querySelector(".data-title").textContent = post.acf.title;
+                    dest.querySelector(".data-pris").innerHTML = post.acf.pris;
+                    dest.querySelector(".data-langbeskrivelse").innerHTML = post.acf.langbeskrivelse;
+                    dest.querySelector(".data-billede").src = post.acf.billede.url;
+                }
+            });
+        }
+
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+
+</html>

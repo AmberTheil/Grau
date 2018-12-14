@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="DA">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Forside</title>
+
+</head>
+
+<body>
+    <header class="header">
+
+
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+
+                    <a href="index.html">
+                <img src="img/logo.png" alt=”Logo”>
+                                  </a>
+
+                    <a href="#">
+                        <li>Kollektion</li>
+                    </a>
+                    <a href="#">
+                        <li>Galleri</li>
+                    </a>
+                    <a href="#">
+                        <li>Om Grau</li>
+                    </a>
+                    <a href="#">
+                        <li>Kontakt</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt=”Logo”>
+                                  </a>
+        </div>
+
+        <nav>
+            <div class="desktop">
+                <ul>
+                    <a href="kollektioner.html">
+                        Kollektion
+                    </a>
+                    <a href="galleri.html">
+                        Galleri
+                    </a>
+                    <a href="om.html">
+                        Om Grau
+                    </a>
+                    <a href="kontakt.html">
+                        Kontakt
+                    </a>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <section id="kollektioner">
+
+        <!--
+<div class="filter-lokation">
+    <label for="toggle">Style</label>
+
+    <div class="dropdownbtn">
+        <button class="style" data-type="Alle">Alle</button>
+        <button class="style" data-type="Bolero">Bolero</button>
+        <button class="style" data-type="Cardigan">Cardigan</button>
+        <button class="style" data-type="Halstørklæde">Halstørklæde</button>
+        <button class="style" data-type="Sjal">Sjal</button>
+        <button class="style" data-type="Poncho">Poncho</button>
+        <button class="style" data-type="Plaid">Plaid</button>
+    </div>
+</div>
+-->
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Filtering</button>
+            <div id="myDropdown" class="dropdown-content">
+                <button class="style" data-type="Alle">Alle</button>
+                <button class="style" data-type="Bolero">Bolero</button>
+                <button class="style" data-type="Cardigan">Cardigan</button>
+                <button class="style" data-type="Halstørklæde">Halstørklæde</button>
+                <button class="style" data-type="Sjal">Sjal</button>
+                <button class="style" data-type="Poncho">Poncho</button>
+                <button class="style" data-type="Plaid">Plaid</button>
+            </div>
+        </div>
+
+        <main>
+            <section class="data-container">
+                <template class="data-template">
+                    <article class="postListview">
+                                    <h3 class="data-title"></h3>
+                                    <h3 class="data-pris"> </h3>
+                                    <img class="data-billede" src="" alt="">
+                                    <div class="data-id"></div>
+                                    <div class="data-kortbeskrivelse"></div>
+                    </article>
+                </template>
+            </section>
+        </main>
+        <script>
+            document.addEventListener("DOMContentLoaded", getJSON);
+
+            let jsonfile;
+            let postTemplate = document.querySelector(".data-template");
+            let postContainer = document.querySelector(".data-container");
+            let filter = "Alle";
+
+            async function getJSON() {
+                let jsonData = await fetch("http://www.rigmordesign.com/kea/grau/wordpress/wp-json/wp/v2/styles?per_page=100");
+                jsonfile = await jsonData.json();
+                visPosts();
+            }
+            // ------- FILTRERING AF EVENTS ------- //
+            document.querySelectorAll(".style").forEach(knap => {
+                knap.addEventListener("click", filtering)
+            });
+
+            function filtering() {
+                postContainer.textContent = ""
+                filter = this.getAttribute("data-type")
+                visPosts();
+            }
+
+            function visPosts() {
+                console.log(jsonfile);
+
+                jsonfile.forEach(post => {
+
+                    if (post.acf.style == filter || filter == "Alle") {
+
+                        let klon = postTemplate.cloneNode(true).content;
+                        klon.querySelector(".data-title").textContent = post.acf.title;
+                        klon.querySelector(".data-kortbeskrivelse").textContent = post.acf.kortbeskrivelse;
+                        klon.querySelector(".data-pris").textContent = "Pris: " + post.acf.pris + ",-";
+                        klon.querySelector("img").src = post.acf.billede.url;
+                        klon.querySelector(".postListview").addEventListener("click", () => {
+                            window.location.href = "single.html?id=" + post.id;
+                        });
+                        postContainer.appendChild(klon);
+                    }
+                })
+            }
+
+
+            /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn')) {
+
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+        </script>
+    </section>
+
+    <footer class="footer">
+
+    </footer>
+
+</body>
+
+</html>
