@@ -14,7 +14,8 @@
 }
 
 body {
-    background-size: cover;
+
+    padding: 4vw;
 }
 
 .header img {
@@ -28,11 +29,14 @@ body {
 
 .header {
     width: 100%;
-    margin-top: 5vw;
+    padding-top: 5vw;
     background-size: cover;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+    background-image: url(img/bagg.jpg);
+    background-size: cover;
+    padding-bottom: 5vw;
 }
 
 a {
@@ -49,10 +53,18 @@ h3 {
     font-weight: 100;
 }
 
+
+
 /* ------------ forside ------------ */
 
 #forside {
-    margin: 5vw;
+    padding-top: 4vw;
+}
+
+#forside .content {
+    background-color: lightgray;
+    padding: 3vw;
+    margin-top: 2vw;
 }
 
 
@@ -61,6 +73,24 @@ h3 {
 a:hover {
     color: tomato;
 }
+
+a.link1:hover {
+    color: #d3655f;
+}
+
+a.link2:hover {
+    color: #674c87;
+}
+
+a.link3:hover {
+    color: #dca840;
+}
+
+a.link4:hover {
+    color: #7acdd2;
+}
+
+
 
 #menuToggle {
     display: block;
@@ -161,20 +191,19 @@ a:hover {
 
 /* kollektioner */
 
+#kollektioner {}
+
 article {
     padding: 1em;
     background-color: white;
-    border: 2px solid lightgrey;
-}
-
-article:nth-child(odd) {
-    background: #fdab73;
-    border: 2px solid lightgrey;
+    /*    border: 2px solid lightgrey;*/
+    box-shadow: inset 0 0 10px #000000;
 }
 
 .data-container article img {
     width: 100%;
-    border: 2px solid #fdab73;
+    height: 20vw;
+    /*    border: 2px solid lightgrey;*/
 }
 
 .data-container {
@@ -192,21 +221,33 @@ article:nth-child(odd) {
 }
 
 
+
 /*----- filterign ------- */
 
 #kollektioner .dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
+    background-color: white;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    margin: 0;
+    box-sizing: border-box;
     cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px,
+    5px 5px,
+    1px 1.5em;
+    background-repeat: no-repeat;
+    margin: 2vw;
+
 }
 
-#kollektioner .dropbtn:hover,
-#kollektioner .dropbtn:focus {
-    background-color: #2980B9;
-}
 
 #kollektioner .dropdown {
     position: relative;
@@ -217,26 +258,32 @@ article:nth-child(odd) {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
+    min-width: 20vw;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+
 }
 
 #kollektioner .dropdown-content button {
     color: black;
-    padding: 12px 16px;
+    padding: 1vw;
     text-decoration: none;
     display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    cursor: pointer;
 }
 
-#kollektioner .dropdown button:hover {
-    background-color: #ddd;
-}
 
 #kollektioner .show {
     display: block;
 }
+
+
+
 
 
 /*------- single ------- */
@@ -312,6 +359,7 @@ img {
     max-width: 500px;
     position: relative;
     margin: auto;
+    border: 4px solid grey;
 }
 
 /* Next & previous buttons */
@@ -461,6 +509,78 @@ img {
     border: 2px solid lightgrey;
 }
 
+/* -----------  map -------- */
+
+#map {
+    width: 100%;
+}
+
+
+/* ----------- footer ----------- */
+
+.footer {
+    background-size: cover;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 45px 50px;
+    margin-top: 80px;
+}
+
+.footer .footer-left p {
+    color: #8f9296;
+    font-size: 14px;
+    margin-top: 1vw;
+    margin-left: 1vw;
+}
+
+/* Footer links */
+
+.footer .footer-links a {
+    padding: 1vw;
+}
+
+.footer .footer-right {
+    float: right;
+    margin-top: 6px;
+    max-width: 180px;
+    margin-right: 5vw;
+}
+
+.footer .footer-right a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #33383b;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-left: 3px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+    .footer .footer-left,
+    .footer .footer-right {
+        text-align: center;
+    }
+
+    .footer .footer-right {
+        float: none;
+        margin: 0 auto 20px;
+    }
+
+    .footer .footer-left p.footer-links {
+        line-height: 1.8;
+    }
+}
+
+
 
 @media only screen and (min-width: 700px) {
     .slideshow {
@@ -510,12 +630,12 @@ img {
 
 }
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 500px) {
     .slideshow {
         max-width: 800px;
     }
     .header .logo img {
-        width: 30%;
+        width: 20%;
     }
     #menuToggle {
         display: none;
@@ -536,11 +656,13 @@ img {
     }
 
     nav .desktop a {
-        word-spacing: 2vw;
+        padding: 1.5vw;
     }
+
+
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 550px) {
     nav .desktop {
         display: none;
     }

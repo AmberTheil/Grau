@@ -72,22 +72,6 @@
 
     <section id="kollektioner">
 
-        <!--
-<div class="filter-lokation">
-    <label for="toggle">Style</label>
-
-    <div class="dropdownbtn">
-        <button class="style" data-type="Alle">Alle</button>
-        <button class="style" data-type="Bolero">Bolero</button>
-        <button class="style" data-type="Cardigan">Cardigan</button>
-        <button class="style" data-type="Halstørklæde">Halstørklæde</button>
-        <button class="style" data-type="Sjal">Sjal</button>
-        <button class="style" data-type="Poncho">Poncho</button>
-        <button class="style" data-type="Plaid">Plaid</button>
-    </div>
-</div>
--->
-
         <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">Filtering</button>
             <div id="myDropdown" class="dropdown-content">
@@ -106,8 +90,8 @@
                 <template class="data-template">
                     <article class="postListview">
                                     <h3 class="data-title"></h3>
-                                    <h3 class="data-pris"> </h3>
                                     <img class="data-billede" src="" alt="">
+                        <h3 class="data-pris"> </h3>
                                     <div class="data-id"></div>
                                     <div class="data-kortbeskrivelse"></div>
                     </article>
@@ -147,8 +131,8 @@
 
                         let klon = postTemplate.cloneNode(true).content;
                         klon.querySelector(".data-title").textContent = post.acf.title;
-                        klon.querySelector(".data-kortbeskrivelse").textContent = post.acf.kortbeskrivelse;
-                        klon.querySelector(".data-pris").textContent = "Pris: " + post.acf.pris + ",-";
+                        //                        klon.querySelector(".data-kortbeskrivelse").textContent = post.acf.kortbeskrivelse;
+                        klon.querySelector(".data-pris").textContent = "Pris: " + post.acf.pris + "DKK";
                         klon.querySelector("img").src = post.acf.billede.url;
                         klon.querySelector(".postListview").addEventListener("click", () => {
                             window.location.href = "single.html?id=" + post.id;
@@ -179,6 +163,7 @@ toggle between hiding and showing the dropdown content */
                     }
                 }
             }
+
         </script>
     </section>
 

@@ -44,16 +44,16 @@
                 <img src="img/logo.png" alt=”Logo”>
                                   </a>
 
-                    <a href="kollektioner.html">
+                    <a class="link1" href="kollektioner.html">
                         <li>Kollektion</li>
                     </a>
-                    <a href="galleri.html">
+                    <a class="link2" href="galleri.html">
                         <li>Galleri</li>
                     </a>
-                    <a href="om.html">
+                    <a class="link3" href="om.html">
                         <li>Om Grau</li>
                     </a>
-                    <a href="kontakt.html">
+                    <a class="link4" href="kontakt.html">
                         <li>Kontakt</li>
                     </a>
                 </ul>
@@ -72,16 +72,16 @@
         <nav>
             <div class="desktop">
                 <ul>
-                    <a href="kollektioner.html">
+                    <a class="link1" href="kollektioner.html">
                         Kollektion
                     </a>
-                    <a href="galleri.html">
+                    <a class="link2" href="galleri.html">
                         Galleri
                     </a>
-                    <a href="om.html">
+                    <a class="link3" href="om.html">
                         Om Grau
                     </a>
-                    <a href="kontakt.html">
+                    <a class="link4" href="kontakt.html">
                         Kontakt
                     </a>
                 </ul>
@@ -128,53 +128,86 @@
                 <span class="dot" onclick="currentSlide(5)"></span>
             </div>
         </div>
-        <article class="content">
+        <div class="content">
 
             <div class="text-box">
 
-                <p> I Huset finder du en masse kulturoplevelser, hyggelig stemning, krøllede ideer og kreative ildsjæle. Med intet mindre end 5 scener, en biograf, et teater, øvelokaler, madbod, arkadespil, en brætspilscafé – og mere end tyve foreninger og klubber – sker der rigtig meget! her kan du blandt andet spille eller opleve musik, spille et brætspil, drikke en øl med dine venner, spise lidt mad og se stand up.<br><br> Huset er faktisk et af Danmarks ældste kulturhuse! Det har ligget i Magstræde midt i København siden 1970, hvor det blev besat af en gruppe hippier og kunstnere.<br><br> I 2015 blev Huset en del af DIT:KBH som består af kulturhusene Huset-KBH, Verdenskulturcenteret, Onkel Dannys Plads, Kulturhuset Indre By og huser derudover også organisationerne CPH Volunteers og Projektpionererne. Sammenlagt står DIT:KBH for mere end 3000 årlige kulturarrangementer og tilbud, hvilket samler over 1.2 mio. besøgende københavnere hvert år.<br><br> Selvom Huset i dag har ændret navn og officielt nu hedder Huset-KBH så lever den gamle Magstræde-ånd videre gennem leg, kreativitet og frivillighed. Huset handler om at skabe sjove, skæve og alternative kulturoplevelser, der får hverdagen til at skille sig ud!
+                <p> Maria-Louise Grau (1969-) er en dansk tøjdesigner der designer og producerer, uddannet ved Danmarks designskole (1999) med yderligere specialist uddannelse på Lineapiù Italia and Stolt (2001). <br> <br> Maria-Louise arbejdede i Paris for Christian Lecroix(“first line”) og ved bureauet PeclersParis, før hun i 2001 startede sit eget firma med Avantgarde håndlavede strikkevarer. Familien Grau har været i den danske tøjbranchen i 5 generationer.
                     <p>
 
             </div>
 
-        </article>
+        </div>
+
+
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {
+                    slideIndex = 1
+                }
+                if (n < 1) {
+                    slideIndex = slides.length
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+
+        </script>
 
     </section>
 
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = slides.length
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
-    </script>
-
     <footer class="footer">
+
+        <div class="footer-right">
+
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+
+        </div>
+
+        <div class="footer-left">
+
+            <div class="footer-links">
+                <a class="link1" href="kollektioner.html">
+                        Kollektion
+                    </a>
+                <a class="link2" href="galleri.html">
+                        Galleri
+                    </a>
+                <a class="link3" href="om.html">
+                        Om Grau
+                    </a>
+                <a class="link4" href="kontakt.html">
+                        Kontakt
+                    </a>
+            </div>
+
+            <p>Grau &copy; 2001</p>
+        </div>
+
 
     </footer>
 </body>
