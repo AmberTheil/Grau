@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Single</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon_grau/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon_grau/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon_grau/android-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon_grau/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon_grau/android-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon_grau/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon_grau/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon_grau/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_grau/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon_grau/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_grau/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon_grau/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_grau/favicon-16x16.png">
+    <link rel="manifest" href="favicon_grau/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
 </head>
 
 <body>
@@ -25,21 +44,23 @@
                 <img src="img/logo.png" alt=”Logo”>
                                   </a>
 
-                    <a href="kollektioner.html">
-                        <li>Kollektion</li>
+                    <a class="link1" href="kollektioner.html">
+                        <li>Kollektioner</li>
                     </a>
-                    <a href="galleri.html">
+                    <a class="link2" href="galleri.html">
                         <li>Galleri</li>
                     </a>
-                    <a href="#">
+                    <a class="link3" href="om.html">
                         <li>Om Grau</li>
                     </a>
-                    <a href="kontakt.html">
+                    <a class="link4" href="kontakt.html">
                         <li>Kontakt</li>
                     </a>
                 </ul>
             </div>
         </nav>
+
+
 
 
         <div class="logo">
@@ -51,21 +72,22 @@
         <nav>
             <div class="desktop">
                 <ul>
-                    <a href="kollektioner.html">
-                        Kollektion
+                    <a class="link1" href="kollektioner.html">
+                        Kollektioner
                     </a>
-                    <a href="galleri.html">
+                    <a class="link2" href="galleri.html">
                         Galleri
                     </a>
-                    <a href="om.html">
+                    <a class="link3" href="om.html">
                         Om Grau
                     </a>
-                    <a href="kontakt.html">
+                    <a class="link4" href="kontakt.html">
                         Kontakt
                     </a>
                 </ul>
             </div>
         </nav>
+
     </header>
 
 
@@ -75,31 +97,52 @@
 
     <section id="single">
 
-        <button onclick="goBack()">Tilbage</button>
+        <div class="knappen">
+            <button class="knap" onclick="goBack()">Tilbage</button>
+        </div>
 
-        <main>
-            <section class="data-container">
+        <div class="single_wrapper">
 
-                <div id="content">
-                    <img class="data-billede" src="" alt="">
-                    <div class="mainside">
+            <main>
+                <section class="data-container">
+
+                    <div id="content_side">
                         <h2 class="data-title"></h2>
-                        <h4 class="data-langbeskrivelse"></h4>
                         <h4 class="data-pris"></h4>
+                        <img class="data-billede" src="" alt="">
+                        <div class="mainside">
+                            <div class="content">
+
+                                <div class="text-box">
+                                    <h4 class="data-langbeskrivelse"></h4>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="content">
+
+                            <div class="text-box">
+
+                                <p> På grund af vores unikke strikprodukter og den varierende import af garn, er det ikke muligt at bestille præcis det samme produkt som du ser på hjemmesiden. Det er muligt at komme med specifikke ønsker, med hensyn til farve, og vi vil så vidt efterkomme disse ønsker. Valg af style og ønsker indtastes i formularboksen nedenunder.
+                                    <p>
+
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="aside">
 
-                        <div class="containerkontakt">
-                            <form action="/action_page.php">
-                                <label for="fname">Navn</label>
-                                <input type="text" id="fname" name="firstname" placeholder="Dit navn">
+                    <div class="containerkontakt">
+                        <form action="/action_page.php">
+                            <label for="fname">Navn</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Dit navn">
 
-                                <label for="lname">E-mail</label>
-                                <input type="text" id="lname" name="lastname" placeholder="Din e-mail...">
-                                <label for="lname">Telefon nr.</label>
-                                <input type="text" id="lname" name="lastname" placeholder="Dit telefon nr...">
-                                <label for="style">Style</label>
-                                <select id="style" name="style">
+                            <label for="lname">E-mail</label>
+                            <input type="text" id="lname" name="lastname" placeholder="Din e-mail...">
+                            <label for="lname">Telefon nr.</label>
+                            <input type="text" id="lname" name="lastname" placeholder="Dit telefon nr...">
+                            <label for="style">Style</label>
+                            <select id="style" name="style">
           <option value="bolero">Bolero</option>
           <option value="cardigan">Cardigan</option>
           <option value="halstørklæde">Halstørklæde</option>
@@ -107,8 +150,8 @@
                                     <option value="Poncho">Poncho</option>
                                     <option value="Plaid">Plaid</option>
         </select>
-                                <label for="farver">Farver</label>
-                                <select id="farver" name="farver">
+                            <label for="farver">Farver</label>
+                            <select id="farver" name="farver">
           <option value="lyst">Lyst</option>
           <option value="mørkt">Mørkt</option>
           <option value="farverigt">Farverigt</option>
@@ -116,18 +159,16 @@
                                     <option value="blåligt">Blåligt</option>
         </select>
 
-                                <label for="subject">Kommentare</label>
-                                <textarea id="subject" name="subject" placeholder="Skriv din kommentar her..." style="height:200px"></textarea>
+                            <label for="subject">Kommentare</label>
+                            <textarea id="subject" name="subject" placeholder="Skriv din kommentar her..." style="height:200px"></textarea>
 
-                                <input type="submit" value="Send">
-                            </form>
-                        </div>
-
+                            <input type="submit" value="Send">
+                        </form>
                     </div>
-                </div>
-            </section>
+                </section>
 
-        </main>
+            </main>
+        </div>
     </section>
 
 
@@ -153,7 +194,7 @@
             posts.forEach(post => {
                 if (post.id == id) {
                     dest.querySelector(".data-title").textContent = post.acf.title;
-                    dest.querySelector(".data-pris").innerHTML = post.acf.pris;
+                    dest.querySelector(".data-pris").innerHTML = "Pris: " + post.acf.pris + "DKK";
                     dest.querySelector(".data-langbeskrivelse").innerHTML = post.acf.langbeskrivelse;
                     dest.querySelector(".data-billede").src = post.acf.billede.url;
                 }
@@ -165,7 +206,29 @@
             window.history.back();
         }
     </script>
+    <footer class="footer">
 
+        <div class="footer-right">
+
+
+            <a href="#"><i class="fas fa-mobile-alt"></i></a>
+            <a href="#"><i class="far fa-envelope"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+
+        </div>
+
+        <div class="footer-left">
+
+            <div class="footer-links">
+                Designer og kunsthåndværker: Maria-Louise Grau
+            </div>
+
+            <p>Grau &copy; 2001</p>
+        </div>
+
+
+    </footer>
 </body>
 
 </html>

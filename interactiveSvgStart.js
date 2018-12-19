@@ -36,9 +36,8 @@ async function runProgram() {
     let info_9 = document.querySelector("#map #Billeder #_1969-2");
     let info_10 = document.querySelector("#map #Billeder #_2001-2");
 
-    // Vi skjuler alle 10 infobokse
+    // Vi skjuler 9 infobokse
 
-    info_1.style.visibility = "hidden";
     info_2.style.visibility = "hidden";
     info_3.style.visibility = "hidden";
     info_4.style.visibility = "hidden";
@@ -135,7 +134,7 @@ async function runProgram() {
         //skift farve på det valgte
         //-------------------------------------------------------------------------
         if (color === "#000") {
-            document.querySelector("#" + selectedID).setAttribute("fill", "#FF0000");
+            document.querySelector("#" + selectedID).setAttribute("fill", "#FFCA00");
         }
 
         //reset farve og skjul tekst hvis valgt elementet allerede er aktivt
