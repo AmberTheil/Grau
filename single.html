@@ -38,25 +38,24 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <ul id="menu">
-
+                <div id="menu">
                     <a href="index.html">
                 <img src="img/logo.png" alt=”Logo”>
                                   </a>
 
                     <a class="link1" href="kollektioner.html">
-                        <li>Kollektioner</li>
+                        <h2>Kollektioner</h2>
                     </a>
                     <a class="link2" href="galleri.html">
-                        <li>Galleri</li>
+                        <h2>Galleri</h2>
                     </a>
                     <a class="link3" href="om.html">
-                        <li>Om Grau</li>
+                        <h2>Om Grau</h2>
                     </a>
                     <a class="link4" href="kontakt.html">
-                        <li>Kontakt</li>
+                        <h2>Kontakt</h2>
                     </a>
-                </ul>
+                </div>
             </div>
         </nav>
 
@@ -71,20 +70,18 @@
 
         <nav>
             <div class="desktop">
-                <ul>
-                    <a class="link1" href="kollektioner.html">
+                <a class="link1" href="kollektioner.html">
                         Kollektioner
                     </a>
-                    <a class="link2" href="galleri.html">
+                <a class="link2" href="galleri.html">
                         Galleri
                     </a>
-                    <a class="link3" href="om.html">
+                <a class="link3" href="om.html">
                         Om Grau
                     </a>
-                    <a class="link4" href="kontakt.html">
+                <a class="link4" href="kontakt.html">
                         Kontakt
                     </a>
-                </ul>
             </div>
         </nav>
 
@@ -103,46 +100,51 @@
 
         <div class="single_wrapper">
 
-            <main>
-                <section class="data-container">
 
-                    <div id="content_side">
-                        <h2 class="data-title"></h2>
-                        <h4 class="data-pris"></h4>
-                        <img class="data-billede" src="" alt="">
-                        <div class="mainside">
-                            <div class="content">
+            <section class="data-container">
 
-                                <div class="text-box">
-                                    <h4 class="data-langbeskrivelse"></h4>
-                                </div>
-
-                            </div>
-
-                        </div>
+                <div id="content_side">
+                    <h4 class="data-title"></h4>
+                    <h4 class="data-pris"></h4>
+                    <img class="data-billede" src="" alt="">
+                    <div class="mainside">
                         <div class="content">
 
                             <div class="text-box">
-
-                                <p> På grund af vores unikke strikprodukter og den varierende import af garn, er det ikke muligt at bestille præcis det samme produkt som du ser på hjemmesiden. Det er muligt at komme med specifikke ønsker, med hensyn til farve, og vi vil så vidt efterkomme disse ønsker. Valg af style og ønsker indtastes i formularboksen nedenunder.
-                                    <p>
-
+                                <p class="data-langbeskrivelse"></p>
                             </div>
 
                         </div>
+
                     </div>
+                    <div class="content">
 
-                    <div class="containerkontakt">
-                        <form action="/action_page.php">
-                            <label for="fname">Navn</label>
-                            <input type="text" id="fname" name="firstname" placeholder="Dit navn">
+                        <div class="text-box">
 
-                            <label for="lname">E-mail</label>
-                            <input type="text" id="lname" name="lastname" placeholder="Din e-mail...">
-                            <label for="lname">Telefon nr.</label>
-                            <input type="text" id="lname" name="lastname" placeholder="Dit telefon nr...">
-                            <label for="style">Style</label>
-                            <select id="style" name="style">
+                            <p> På grund af vores unikke strikprodukter og den varierende import af garn, er det ikke muligt at bestille præcis det samme produkt som du ser på hjemmesiden. Det er muligt at komme med specifikke ønsker, med hensyn til farve, og vi vil så vidt efterkomme disse ønsker. Valg af style og ønsker indtastes i formularboksen nedenunder.
+                                <p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="containerkontakt">
+                    <form action="/action_page.php">
+                        <label for="fname">Navn</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Dit navn">
+
+                        <label for="email">E-mail</label>
+                        <input type="text" id="email" name="lastname" placeholder="Din e-mail...">
+
+                        <label for="tfon">Telefon nr.</label>
+                        <input type="text" id="tfon" name="telefon" placeholder="Dit telefon nr...">
+
+                        <label for="adr">Adresse</label>
+                        <input type="text" id="adr" name="adresse" placeholder="Din adresse...">
+
+                        <label for="style">Style</label>
+                        <select id="style" name="style">
           <option value="bolero">Bolero</option>
           <option value="cardigan">Cardigan</option>
           <option value="halstørklæde">Halstørklæde</option>
@@ -150,8 +152,8 @@
                                     <option value="Poncho">Poncho</option>
                                     <option value="Plaid">Plaid</option>
         </select>
-                            <label for="farver">Farver</label>
-                            <select id="farver" name="farver">
+                        <label for="farver">Farver</label>
+                        <select id="farver" name="farver">
           <option value="lyst">Lyst</option>
           <option value="mørkt">Mørkt</option>
           <option value="farverigt">Farverigt</option>
@@ -159,15 +161,14 @@
                                     <option value="blåligt">Blåligt</option>
         </select>
 
-                            <label for="subject">Kommentare</label>
-                            <textarea id="subject" name="subject" placeholder="Skriv din kommentar her..." style="height:200px"></textarea>
+                        <label for="subject">Kommentare</label>
+                        <textarea id="subject" name="subject" placeholder="Skriv din kommentar her..." style="height:200px"></textarea>
 
-                            <input type="submit" value="Send">
-                        </form>
-                    </div>
-                </section>
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+            </section>
 
-            </main>
         </div>
     </section>
 
@@ -211,16 +212,16 @@
         <div class="footer-right">
 
 
-            <a href="#"><i class="fas fa-mobile-alt"></i></a>
-            <a href="#"><i class="far fa-envelope"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="tel:+4525341016 "><i class="fas fa-mobile-alt "></i></a>
+            <a href="mailto:m-l@grau-cph.com "><i class="far fa-envelope "></i></a>
+            <a href="https://www.instagram.com/marialouisegrau/ " target="blank "><i class="fab fa-instagram "></i></a>
+            <a href="https://www.youtube.com/grau/ " target="blank"><i class="fab fa-youtube "></i></a>
 
         </div>
 
         <div class="footer-left">
 
-            <div class="footer-links">
+            <div class="footer-links ">
                 Designer og kunsthåndværker: Maria-Louise Grau
             </div>
 

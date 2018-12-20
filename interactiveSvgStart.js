@@ -16,6 +16,7 @@ async function runProgram() {
     let active;
     let infoboks;
 
+
     // Vi loader svg map
 
     let mySvg = await fetch("tidsliniefinal.svg");
@@ -25,16 +26,16 @@ async function runProgram() {
 
     // Vi finder alle infobokse og giver dem hver en variabel
 
-    let info_1 = document.querySelector("#map #Billeder #_1770-2");
-    let info_2 = document.querySelector("#map #Billeder #_1816-2");
-    let info_3 = document.querySelector("#map #Billeder #_1882-2");
-    let info_4 = document.querySelector("#map #Billeder #_1894-2");
-    let info_5 = document.querySelector("#map #Billeder #_1911-2");
-    let info_6 = document.querySelector("#map #Billeder #_1932-2");
-    let info_7 = document.querySelector("#map #Billeder #_1945-2");
-    let info_8 = document.querySelector("#map #Billeder #_1960-2");
-    let info_9 = document.querySelector("#map #Billeder #_1969-2");
-    let info_10 = document.querySelector("#map #Billeder #_2001-2");
+    let info_1 = document.querySelector("#map #Layer_1 #Billeder #_1770-2");
+    let info_2 = document.querySelector("#map #Layer_1 #Billeder #_1816-2");
+    let info_3 = document.querySelector("#map #Layer_1 #Billeder #_1882-2");
+    let info_4 = document.querySelector("#map #Layer_1 #Billeder #_1894-2");
+    let info_5 = document.querySelector("#map #Layer_1 #Billeder #_1911-2");
+    let info_6 = document.querySelector("#map #Layer_1 #Billeder #_1932-2");
+    let info_7 = document.querySelector("#map #Layer_1 #Billeder #_1945-2");
+    let info_8 = document.querySelector("#map #Layer_1 #Billeder #_1960-2");
+    let info_9 = document.querySelector("#map #Layer_1 #Billeder #_1969-2");
+    let info_10 = document.querySelector("#map #Layer_1 #Billeder #_2001-2");
 
     // Vi skjuler 9 infobokse
 
@@ -50,7 +51,15 @@ async function runProgram() {
 
     // 3. Skift farve ved klik, og vis tekst
     // Vi laver et klik event
-    document.querySelector("#map #Punkter").addEventListener("click", function (evt) {
+
+    active = document.querySelector("#_1770");
+    active.setAttribute("fill", "#FFCA00");
+    //selected = active;
+    infoboks = info_1;
+
+    console.log("active: ", active);
+
+    document.querySelector("#map #Layer_1 #Punkter").addEventListener("click", function (evt) {
         clicked(evt);
     })
 
@@ -58,23 +67,28 @@ async function runProgram() {
 
     function clicked(obj) {
 
-        // Hvis infoboks er defineret dvs der er klikket, skal infoboksen skjules
-
         if (infoboks != undefined) {
             infoboks.style.visibility = "hidden";
         }
-
-        // Vi finder det klikkede element
 
         selected = obj.target;
 
         // Vi finder det klikkede elementets ID
 
         selectedID = selected.getAttribute("id");
+        console.log(obj.target);
+        console.log();
 
-        // Vi finder det klikkede elements stroke
+        // Vi finder det klikkede elements fill
 
-        color = selected.getAttribute("stroke");
+        color = selected.getAttribute("fill");
+        console.log(color);
+
+        // Når man klikker fra et punkt til et andet, skal det forige punkt skifte farve til original
+
+        if (active != undefined) {
+            active.setAttribute("fill", color);
+        }
 
         // Vi viser hver infoboks hvis infoboksens punkt er klikket
 
@@ -120,12 +134,6 @@ async function runProgram() {
         }
 
 
-        // Når man klikker fra et punkt til et andet, skal det forige punkt skifte farve til original
-
-        if (active != undefined) {
-            active.setAttribute("fill", color);
-        }
-
         // Vi gør det klikkede til det aktive
 
         active = selected;
@@ -133,16 +141,15 @@ async function runProgram() {
 
         //skift farve på det valgte
         //-------------------------------------------------------------------------
-        if (color === "#000") {
+        if (color === "#717171") {
             document.querySelector("#" + selectedID).setAttribute("fill", "#FFCA00");
         }
 
         //reset farve og skjul tekst hvis valgt elementet allerede er aktivt
         //--------------------------------------------------------------------------
         else {
-            document.querySelector("#" + selectedID).setAttribute("fill", "#000");
+            document.querySelector("#" + selectedID).setAttribute("fill", "#717171");
             infoboks.style.visibility = "hidden";
         }
     }
-
 };

@@ -3,19 +3,19 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'AvenirNext-DemiBold';
+    font-family: 'AvenirNextLTPro-Bold';
     box-sizing: border-box;
     /*    border: 1px solid pink;*/
 }
 
 @font-face {
-    font-family: 'AvenirNext-DemiBold';
-    src: url(AvenirNext-DemiBold.ttf);
+    font-family: 'AvenirNextLTPro-Bold';
+    src: url(AvenirNextLTPro-Bold.otf);
 }
 
 @font-face {
     font-family: 'AvenirNextLTPro-Regular';
-    src: url(AvenirNextLTPro-Regular)format("opentype");
+    src: url(AvenirNextLTPro-Regular.otf);
 }
 
 body {
@@ -53,6 +53,12 @@ a {
     text-decoration: none;
 }
 
+h2 {
+    font-size: 1.1em;
+    text-align: center;
+    padding-top: 5vw;
+}
+
 h3 {
     font-size: 1.2em;
     text-transform: uppercase;
@@ -60,7 +66,7 @@ h3 {
 }
 
 p {
-    font-family: AvenirNextLTPro-Regular;
+    font-family: "AvenirNextLTPro-Regular";
     font-size: 1em;
 }
 
@@ -108,7 +114,6 @@ p {
 
 #forside .slideshow-container {
     border-bottom: 1px solid #FFCA00;
-    ;
     padding: 5vw;
     margin-left: 13vw;
     margin-right: 13vw;
@@ -128,6 +133,7 @@ p {
 #forside .slideshow img {
     height: 70%;
     width: 100%;
+
 }
 
 
@@ -510,7 +516,7 @@ a.link4:hover {
     margin-left: 4vw;
 }
 
-#menuToggle input:checked ~ ul {
+#menuToggle input:checked ~ #menu {
     transform: none;
 }
 
@@ -953,8 +959,24 @@ input[type=submit]:hover {
     nav .desktop a {
         padding: 2.5vw;
     }
+}
+
+@media only screen and (max-width: 785px) {
 
 
+    .header .logo img {
+        width: 70%;
+    }
+    .header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .header .logo {
+        grid-column: 2/3;
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width: 785px) {
@@ -984,8 +1006,6 @@ input[type=submit]:hover {
     #galleri .nextT {
         top: 17%;
     }
-
-
 }
 
 @media only screen and (min-width: 700px) {
@@ -994,9 +1014,7 @@ input[type=submit]:hover {
         grid-template-columns: 1fr;
         margin-left: 15vw;
         margin-right: 15vw;
-
     }
-
 
     #galleri .card-carousel .my-card.prev:hover,
     #galleri .card-carousel .my-card.next:hover {
@@ -1010,10 +1028,10 @@ input[type=submit]:hover {
 }
 
 
-@media only screen and (max-width: 930px) {
+@media only screen and (max-width: 950px) {
 
     nav .desktop a {
-        padding: 1vw;
+        padding: 0.8vw;
     }
 }
 
@@ -1021,5 +1039,29 @@ input[type=submit]:hover {
 
     #menuToggle {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 1043px) {
+
+    #kollektioner .dropdown {
+        margin: 3vw;
+        left: 65vw;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+
+    #kollektioner .dropdown {
+        margin: 3vw;
+        left: 60vw;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    #kollektioner .dropdown {
+        margin: 3vw;
+        left: 50vw;
     }
 }
